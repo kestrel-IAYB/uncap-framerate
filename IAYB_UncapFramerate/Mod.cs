@@ -12,15 +12,15 @@ namespace IAYB_UncapFramerate
     {
         public const string pluginGuid = "kestrel.iamyourbeast.uncapframerate";
         public const string pluginName = "Uncap Framerate";
-        public const string pluginversion = "1.0.0.0";
+        public const string pluginversion = "1.0.1";
 
-        public static ConfigEntry<float> minFps;
-        public static ConfigEntry<float> maxFps;
+        public static ConfigEntry<ulong> minFps;
+        public static ConfigEntry<ulong> maxFps;
 
         public void Awake() {
 
-            minFps = Config.Bind("Options", "Minimum Framerate", 10f, "The minimum framerate shown on the slider (minimum value: 1)");
-            maxFps = Config.Bind("Options", "Maximum Framerate", 240f, "The maximum framerate shown on the slider");
+            minFps = Config.Bind("Options", "Minimum Framerate", 10ul, "The minimum framerate shown on the slider (minimum value: 1)");
+            maxFps = Config.Bind("Options", "Maximum Framerate", 240ul, "The maximum framerate shown on the slider");
 
             Logger.LogInfo("Hiiiiiiiiiiii :3");
             Harmony harmony = new Harmony(pluginGuid);
@@ -71,7 +71,7 @@ namespace IAYB_UncapFramerate
             if (value == -1) {
                 ___valueMultiplier = 1;
                 ___slider.minValue = Mathf.Clamp(Mod.minFps.Value, 1, Mod.maxFps.Value);
-                ___slider.maxValue = Mathf.Max(Mod.maxFps.Value, Mod.minFps.Value + 1);
+                ___slider.maxValue = Mod.maxFps.Value;
             }
         }
     }
