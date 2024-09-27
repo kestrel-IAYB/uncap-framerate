@@ -1,6 +1,6 @@
 # MOD NOW OBSOLETE
 
-This mod is now no longer necessary as in the latest patch (27/09/24) the framerate cap has been removed
+This mod is now no longer necessary as in the latest patch (27/09/24) the framerate cap has been removed.
 The mod will still function on versions below this if you are on those for some reason
 
 # Uncap Framerate mod for I Am Your Beast
